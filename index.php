@@ -1,9 +1,9 @@
 <!doctype html>
 <html>
 <head>
-<title>MOVIES !!!!!</title>
+<title>MOVIE DATABASE</title>
 </head>
 <body>
-Wazzup dog
+<?php include('header.php'); ?>
 </body>
 </html>
