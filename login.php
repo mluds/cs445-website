@@ -12,7 +12,8 @@ if ($user_t->num_rows == 1) {
     $user = $user_t->fetch_assoc();
     if ($user["password"] == $_POST["password"]) {
         session_start();
-        $_SESSION["uid"] = $user["id"];
+        $_SESSION["id"] = $user["id"];
+        $_SESSION["email"] = $_POST["email"];
     }
 }
 
