@@ -26,21 +26,43 @@
         </div>
     </form>
 
-    <?php if (isset($_SESSION['id'])): ?>
-    <?php else: ?>
-        <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="login-label" aria-hidden="true">
+    <?php if (!isset($_SESSION['id'])): ?>
+        <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="login-label">Login</h4>
+                        <h4 class="modal-title">Login</h4>
                     </div>
                     <div class="modal-body">
                         <form action="login.php" method="post">
-			    <div class="form-group"><input name="email" type="text" class="form-control" placeholder="Email"></div>
-			    <div class="form-group"><input name="password" type="text" class="form-control" placeholder="Password"></div>
-			    <button type="submit" class="btn btn-primary">Login</button>
-			</form>
+                            <div class="form-group"><input name="email" type="text" class="form-control" placeholder="Email"></div>
+                            <div class="form-group"><input name="password" type="password" class="form-control" placeholder="Password"></div>
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Register</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form action="register.php" method="post">
+                            <div class="form-group"><input name="email" type="text" class="form-control" placeholder="Email"></div>
+                            <div class="form-group"><input name="password" type="password" class="form-control" placeholder="Password"></div>
+                            <div class="form-group"><input name="pass-confirm" type="password" class="form-control" placeholder="Confirm Password"></div>
+                            <div class="form-group"><input name="name" type="text" class="form-control" placeholder="Full Name"></div>
+                            <div class="form-group"><input name="age" type="text" class="form-control" placeholder="Age"></div>
+                            <div class="form-group"><input name="location" type="text" class="form-control" placeholder="Location"></div>
+                            <div class="radio"><label><input type="radio" name="gender" value="M">Male</label></div>
+                            <div class="radio"><label><input type="radio" name="gender" value="F">Female</label></div>
+                            <button type="submit" class="btn btn-primary">Register</button>
+                        </form>
                     </div>
                 </div>
             </div>
