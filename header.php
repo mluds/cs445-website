@@ -13,13 +13,6 @@
         <a class="navbar-brand" href="index.php">Generic Movie Database</a>
     </div>
 
-    <ul class="nav navbar-nav">
-        <li><a href="search.php">Advanced Search</a></li>
-        <?php if ($_SESSION['email'] == 'admin'): ?>
-            <li><a href="admin.php">SQL Interface</a></li>
-        <?php endif; ?>
-    </ul>
-
     <form action="results.php" method="get" class="navbar-form navbar-left" role="search">
         <div class="form-group">
             <input name="search" type="text" class="form-control" placeholder="Search">
@@ -31,28 +24,18 @@
                 <option value="producers">Producers</option>
             </select>
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
     </form>
 
-    <?php if (isset($_SESSION['id'])): ?>
-
-    <form action="logout.php" class="navbar-form navbar-left">
-        <button type="submit" class="btn btn-default">Logout</button>
-    </form>
-
-    <?php else: ?>
-
-    <form action="login.php" method="post" class="navbar-form navbar-left">
-        <div class="form-group">
-            <input name="email" type="text" class="form-control" placeholder="Email">
-            <input name="password" type="text" class="form-control" placeholder="Password">
-        </div>
-        <button type="submit" class="btn btn-default">Login</button>
-    </form>
-
-    <form action="register.php" class="navbar-form navbar-left">
-        <button type="submit" class="btn btn-default">Register</button>
-    </form>
-
-    <?php endif; ?>
+    <ul class="nav navbar-nav">
+        <li><a href="search.php">Advanced Search</a></li>
+        <?php if (isset($_SESSION['email']) and $_SESSION['email'] == 'admin'): ?>
+            <li><a href="admin.php">SQL Interface</a></li>
+        <?php endif; ?>
+	<?php if (isset($_SESSION['id'])): ?>
+	    <li><a href="logout.php">Logout</a></li>
+	<?php else: ?>
+	    <li><a href="login.php">Login</a></li>
+	    <li><a href="register.php">Register</a></li>
+	<?php endif; ?>
+    </ul>
 </nav>
