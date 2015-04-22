@@ -28,19 +28,19 @@
 
     <?php if (isset($_SESSION['id'])): ?>
     <?php else: ?>
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="login-label" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                        <h4 class="modal-title" id="login-label">Login</h4>
                     </div>
                     <div class="modal-body">
-                        ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <form action="login.php" method="post">
+			    <div class="form-group"><input name="email" type="text" class="form-control" placeholder="Email"></div>
+			    <div class="form-group"><input name="password" type="text" class="form-control" placeholder="Password"></div>
+			    <button type="submit" class="btn btn-primary">Login</button>
+			</form>
                     </div>
                 </div>
             </div>
@@ -55,7 +55,7 @@
         <?php if (isset($_SESSION['id'])): ?>
             <li><a href="logout.php">Logout</a></li>
         <?php else: ?>
-            <li><a data-toggle="modal" data-target="#myModal">Login</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#login">Login</a></li>
             <li><a href="register.php">Register</a></li>
         <?php endif; ?>
     </ul>
