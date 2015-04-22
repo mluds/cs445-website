@@ -53,14 +53,16 @@
                     </div>
                     <div class="modal-body">
                         <form action="register.php" method="post">
-                            <div class="form-group"><input name="email" type="text" class="form-control" placeholder="Email"></div>
-                            <div class="form-group"><input name="password" type="password" class="form-control" placeholder="Password"></div>
-                            <div class="form-group"><input name="pass-confirm" type="password" class="form-control" placeholder="Confirm Password"></div>
+                            <div class="form-group"><input name="email" type="email" class="form-control" placeholder="Email" required></div>
+                            <div class="form-group"><input name="password" type="password" class="form-control" placeholder="Password" required></div>
+                            <div class="form-group"><input name="pass-confirm" type="password" class="form-control" placeholder="Confirm Password" required></div>
                             <div class="form-group"><input name="name" type="text" class="form-control" placeholder="Full Name"></div>
-                            <div class="form-group"><input name="age" type="text" class="form-control" placeholder="Age"></div>
+                            <div class="form-group"><input name="age" type="number" class="form-control" placeholder="Age"></div>
                             <div class="form-group"><input name="location" type="text" class="form-control" placeholder="Location"></div>
-                            <div class="radio"><label><input type="radio" name="gender" value="M">Male</label></div>
-                            <div class="radio"><label><input type="radio" name="gender" value="F">Female</label></div>
+			    <div class="form-group">
+                                <label class="radio-inline"><input type="radio" name="gender" value="M">Male</label>
+                                <label class="radio-inline"><input type="radio" name="gender" value="F">Female</label>
+			    </div>
                             <button type="submit" class="btn btn-primary">Register</button>
                         </form>
                     </div>
@@ -78,7 +80,7 @@
             <li><a href="logout.php">Logout</a></li>
         <?php else: ?>
             <li><a href="#" data-toggle="modal" data-target="#login">Login</a></li>
-            <li><a href="register.php">Register</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#register">Register</a></li>
         <?php endif; ?>
     </ul>
 </nav>
