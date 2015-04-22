@@ -37,14 +37,17 @@
 
 	// Output results of the query
 	$result = $conn->query($sql);
-	echo "Number of Search Results: " . $result->num_rows . "<br>";
 	if ($result->num_rows > 0) {
+		echo "<h4>Number of Search Results: " . $result->num_rows . "</h4>";
 		while($row = $result->fetch_assoc()) {
 			echo "<a href='" . $page_name . "?id=" . $row["id"] . "'>" . $row[$output];
 			if ($outputtwo != "") echo " (" . $row[$outputtwo] . ")";
 			echo "</a><br>";
 		}
 		$result->close();
+	}
+	else {
+		echo "<h4>Number of Search Results: 0</h4>";
 	}
 
 	// Close the connection

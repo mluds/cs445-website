@@ -37,7 +37,7 @@
 	// Output the movies they have acted in
 	$result = $conn->query($acted);
 	if($result) {
-		echo "Movies Acted in: <br>";
+		echo "<h4>Movies Acted in: </h4>";
 		while($row = $result->fetch_assoc()) {
 			echo "<a href='movie.php?id=" . $row["id"] . "'>" . $row["title"] . "</a><br>";
 		}
@@ -48,7 +48,7 @@
 	// Output the movies they have directed
 	$result = $conn->query($directed);
 	if($result->num_rows > 0) {
-		echo "Movies Directed: <br>";
+		echo "<h4>Movies Directed: </h4>";
 		while($row = $result->fetch_assoc()) {
 			echo "<a href='movie.php?id=" . $row["id"] . "'>" . $row["title"] . "</a><br>";
 		}
@@ -59,7 +59,7 @@
 	// Output the movies they have Produced
 	$result = $conn->query($produced);
 	if($result->num_rows > 0) {
-		echo "Movies Produced: <br>";
+		echo "<h4>Movies Produced: </h4>";
 		while($row = $result->fetch_assoc()) {
 			echo "<a href='movie.php?id=" . $row["id"] . "'>" . $row["title"] . "</a><br>";
 		}

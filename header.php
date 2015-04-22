@@ -1,31 +1,46 @@
-<link rel="stylesheet" type="text/css" href="http://code.divshot.com/geo-bootstrap/swatch/bootstrap.min.css">
+0;136;0c<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
-<style>
-.header img {
-       float: left;
-}
-</style>
+<nav class="navbar navbar-default">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="index.php">Generic Movie Database</a>
+  </div>
 
-<img src="http://code.divshot.com/geo-bootstrap/img/test/mchammer.gif" style="float: left" />
-<img src="http://code.divshot.com/geo-bootstrap/img/test/mchammer.gif" style="float: left" />
-<img src="http://code.divshot.com/geo-bootstrap/img/test/mchammer.gif" style="float: left" />
-<h2 style="float: left">MOVIE DATABASE</h2>
-<img src="http://code.divshot.com/geo-bootstrap/img/test/new2.gif" style="float: left" />
+  <ul class="nav navbar-nav">
+    <li><a href="search.php">Advanced Search</a></li>
+  </ul>
 
-<!-- Login / Register -->
-<form>
-	Username: <input type="text" name="user"> Password: <input type="password" name="pass">
-</form>
+  <form action="results.php" method="get" class="navbar-form navbar-left" role="search">
+    <div class="form-group">
+      <input name="search" type="text" class="form-control" placeholder="Search">
+      <select name="option" class="form-control">
+        <option value="movies">Movies</option>
+        <option value="users">Users</option>
+        <option value="actors">Actors</option>
+        <option value="directors">Directors</option>
+        <option value="producers">Producers</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
 
-<!-- Search Barr -->
-<form action="results.php" method="GET">
-	<input type="text" name="search">
-	<select name="option">
-		<option value="movies">		Movies</option>
-		<option value="users">		Users</option>
-		<option value="actors">		Actors</option>
-		<option value="directors">	Directors</option>
-		<option value="producers">	Producers</option>
-	</select>
-	<button type="submit" class="btn btn-primary">Search!</button>
-</form>
+  <?php if (isset($_SESSION["uid"])): ?>
+
+  <form action="logout.php">
+    <button type="submit" class="btn btn-default">Logout</button>
+  </form>
+
+  <?php else: ?>
+
+  <form action="login.php" method="post" class="navbar-form navbar-left">
+    <div class="form-group">
+      <input name="email" type="text" class="form-control" placeholder="Email">
+      <input name="password" type="text" class="form-control" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-default">Login</button>
+  </form>
+
+  <?php endif; ?>
+
+</nav>
