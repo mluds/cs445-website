@@ -1,6 +1,12 @@
-0;136;0c<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<?php session_start(); ?>
+<!doctype html>
+<html>
+
+<head>
+<title>Generic Movie Database</title>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
 
 <nav class="navbar navbar-default">
   <div class="navbar-header">
@@ -27,7 +33,7 @@
 
   <?php if (isset($_SESSION["uid"])): ?>
 
-  <form action="logout.php">
+  <form action="logout.php" class="navbar-form navbar-left">
     <button type="submit" class="btn btn-default">Logout</button>
   </form>
 

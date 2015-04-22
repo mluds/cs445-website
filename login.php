@@ -19,4 +19,5 @@ if ($user_t->num_rows == 1) {
 $host = $_SERVER["HTTP_HOST"];
 header("Location: http://$host/php-wrapper/cs445_FLP_s15/index.php");
 exit();
+
 ?>
