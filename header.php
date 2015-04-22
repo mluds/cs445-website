@@ -26,16 +26,37 @@
         </div>
     </form>
 
+    <?php if (isset($_SESSION['id'])): ?>
+    <?php else: ?>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
+
     <ul class="nav navbar-nav">
         <li><a href="search.php">Advanced Search</a></li>
         <?php if (isset($_SESSION['email']) and $_SESSION['email'] == 'admin'): ?>
             <li><a href="admin.php">SQL Interface</a></li>
         <?php endif; ?>
-	<?php if (isset($_SESSION['id'])): ?>
-	    <li><a href="logout.php">Logout</a></li>
-	<?php else: ?>
-	    <li><a href="login.php">Login</a></li>
-	    <li><a href="register.php">Register</a></li>
-	<?php endif; ?>
+        <?php if (isset($_SESSION['id'])): ?>
+            <li><a href="logout.php">Logout</a></li>
+        <?php else: ?>
+            <li><a data-toggle="modal" data-target="#myModal">Login</a></li>
+            <li><a href="register.php">Register</a></li>
+        <?php endif; ?>
     </ul>
 </nav>
