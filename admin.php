@@ -24,6 +24,7 @@ $('#query').submit(function(event) {
 <?php else: ?>
 
 You don't have permission to view this page.
+<?php include('sidebar.php'); ?>
 <?php include('footer.php'); ?>
 
 <?php endif; ?>

@@ -59,6 +59,7 @@ if($result->num_rows > 0) {
 
 $conn->close();
 
+include('sidebar.php');
 include('footer.php');
 
 ?>

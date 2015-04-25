@@ -92,7 +92,7 @@ else {
 
 // Close the connection
 $conn->close();
-
+include('sidebar.php');
 include('footer.php');
 
 ?>

@@ -116,6 +116,7 @@ if ($result) {
 
 $conn->close();
 
+include('sidebar.php');
 include('footer.php');
 
 ?>
